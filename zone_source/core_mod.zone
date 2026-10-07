@@ -1,0 +1,12 @@
+>mode,core
+>type,common
+
+#include "core_mod.class"
+
+image,zmods_menu_background_image
+
+rawfile,ui/t7/utility/codutilityrequire.lua
+rawfile,ui/zstats/zstatssettings.lua
+rawfile,ui/zstats/zstatssettingsdata.lua
+rawfile,ui/zstats/zstatsingamesettings.lua
+rawfile,ui/zstats/zstatspause.lua

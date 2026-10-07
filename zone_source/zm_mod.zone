@@ -1,0 +1,11 @@
+>mode,zm
+>type,common
+
+#include "zm_mod.class"
+
+// Standalone startup carrier. ZBundle merges this stock owner with the other
+// components which register from _scoreboard.gsc.
+rawfile,dummy.cfg
+scriptparsetree,scripts/zstats/main.gsc
+scriptparsetree,scripts/zstats/main.csc
+scriptparsetree,scripts/zm/gametypes/_scoreboard.gsc

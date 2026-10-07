@@ -1,0 +1,27 @@
+{
+	"zmods_menu_background_image" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\zmods\\zmods_menu_background.png"
+		"clampU" "1"
+		"clampV" "1"
+		"colorSRGB" "1"
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"imageType" "Texture"
+		"mipBase" "1/1"
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "0"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+}
