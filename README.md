@@ -4,7 +4,7 @@
 
 by Xep
 
-[**Subscribe on Steam Workshop**](https://steamcommunity.com/sharedfiles/filedetails/?id=3814909842)
+[**Subscribe on Steam Workshop**](https://steamcommunity.com/sharedfiles/filedetails/?id=3814909842) or download the linked T7 mod from this repository's GitHub Releases.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
 
@@ -29,15 +29,16 @@ Both ports use the same public version and setting names.
 
 ## Requirements
 
-Black Ops III Zombies and the Steam Workshop mod. ZStats is designed for
+Black Ops III Zombies and either the Workshop or the direct-download mod. ZStats is designed for
 ordinary round-based Zombies. Dead Ops Arcade and Nightmares are outside its
 Zombies-script integration.
 
 Black Ops III enables one mod at a time. Use the combined
 [ZBundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3802815997)
-when you want ZStats alongside the other Z mods. The Workshop item is the
-player installation route; the T7 zip from this project is input for the
-official BO3 Mod Tools, not a drop-in game mod.
+when you want ZStats alongside the other Z mods. The two T7 ZIPs have distinct
+purposes: **ZStats T7 v1.0 by Xep.zip** contains the linked mod for players;
+**ZStats T7 Workshop v1.0 by Xep.zip** contains source for BO3 Mod Tools.
+The Workshop source ZIP is not a drop-in game mod.
 
 ---
 
@@ -47,6 +48,14 @@ Subscribe to [ZStats on Steam Workshop](https://steamcommunity.com/sharedfiles/f
 Black Ops III's **Mods** menu, and start a new Zombies match. The Workshop
 handles updates. To use the combined mod, subscribe to ZBundle and select it
 instead of the standalone ZStats item.
+
+For a direct GitHub install, download **ZStats T7 v1.0 by Xep.zip** from
+[Releases](https://github.com/Xeptix/ZStatsT7/releases). Extract its `mods`
+folder into your Black Ops III game directory so the files land in
+`<Black Ops III>/mods/zstats/zone/`. Select `zstats` from the game's **Mods**
+menu. This route is a complete, linked standalone mod; it does not use the
+Workshop source ZIP and will not update itself through Steam. The direct ZIP
+includes all twelve shipped language fastfile pairs.
 
 For maintainers building from the release source, copy `ui`, `scripts`,
 `zone_source`, and `dummy.cfg` into `<BO3 Mod Tools>/mods/zstats`. Copy
@@ -173,7 +182,7 @@ stock startup or ending owner may need its own integration.
 | Black Ops III (T7) | ZStatsT7 - you are here |
 
 Both ports carry the same public version and setting names. The T6 edition
-is installed as a Plutonium mod, while T7 is distributed through the Workshop.
+is installed as a Plutonium mod, while T7 has Workshop and direct-download mod routes.
 
 ---
 
