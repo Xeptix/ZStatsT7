@@ -1,0 +1,12 @@
+{
+  "format": 2,
+  "id": "zstats",
+  "source": "src/forks/t7/zstats_script.gsc",
+  "sourceSha256": "4e64fa22cb13a109921c891884c707a233bc538e8b5d55a0f1a07ad5c9706284",
+  "sourceNamespace": "zstats",
+  "functionCount": 149,
+  "generatedPrefix": "zstats__",
+  "generatedSourceSha256": "de205db525208090884fc61d40ccedea5745fe981794f9a0c05a48eac3da4f7b",
+  "injectionTarget": "scripts/shared/duplicaterender_mgr.gsc",
+  "namespace": "zbundle"
+}

@@ -6,7 +6,9 @@ by Xep
 
 [**Subscribe on Steam Workshop**](https://steamcommunity.com/sharedfiles/filedetails/?id=3814909842) or download the linked T7 mod from this repository's GitHub Releases.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
+[![Support the mod on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
+[![Support the mod on Patreon](https://img.shields.io/badge/Patreon-Xeptix-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/Xeptix)
+[![Join the Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/RE85HRwYZZ)
 
 ZStats adds a compact live HUD, a round-MVP callout, and a Game Over recap without
 replacing the stock scoreboard. It tracks the match while you play and gives solo
@@ -29,15 +31,17 @@ Both ports use the same public version and setting names.
 
 ## Requirements
 
-Black Ops III Zombies and either the Workshop or the direct-download mod. ZStats is designed for
+Black Ops III Zombies and either the Workshop, the direct-download mod, or a
+supported script loader. ZStats is designed for
 ordinary round-based Zombies. Dead Ops Arcade and Nightmares are outside its
 Zombies-script integration.
 
-Black Ops III enables one mod at a time. Use the combined
+Black Ops III enables one selectable mod at a time. Use the combined
 [ZBundle](https://steamcommunity.com/sharedfiles/filedetails/?id=3802815997)
-when you want ZStats alongside the other Z mods. The two T7 ZIPs have distinct
-purposes: **ZStats T7 v1.0 by Xep.zip** contains the linked mod for players;
-**ZStats T7 Workshop v1.0 by Xep.zip** contains source for BO3 Mod Tools.
+when you want ZStats alongside the other Z mods. The T7 downloads have distinct
+purposes: the **ZStats T7** ZIP is the linked mod for players;
+the **ZStats T7 Script** ZIP is for supported script loaders;
+the **ZStats T7 Workshop** ZIP is BO3 Mod Tools source.
 The Workshop source ZIP is not a drop-in game mod.
 
 ---
@@ -49,7 +53,7 @@ Black Ops III's **Mods** menu, and start a new Zombies match. The Workshop
 handles updates. To use the combined mod, subscribe to ZBundle and select it
 instead of the standalone ZStats item.
 
-For a direct GitHub install, download **ZStats T7 v1.0 by Xep.zip** from
+For a direct GitHub install, download the **ZStats T7** player ZIP from
 [Releases](https://github.com/Xeptix/ZStatsT7/releases). Extract its `mods`
 folder into your Black Ops III game directory so the files land in
 `<Black Ops III>/mods/zstats/zone/`. Select `zstats` from the game's **Mods**
@@ -57,12 +61,69 @@ menu. This route is a complete, linked standalone mod; it does not use the
 Workshop source ZIP and will not update itself through Steam. The direct ZIP
 includes all twelve shipped language fastfile pairs.
 
+For BOIII, T7x, or t7-compiler, download the **Script** ZIP and run
+`installer/windows/install.bat` or `installer/linux/install.sh` from its
+extracted folder. Linux desktop users can also open
+`installer/linux/Install ZStats T7.desktop`. The installer detects BOIII and
+T7x, or accepts an explicit
+game folder. The Windows installer selects `-Route BOIII`, `-Route T7x`,
+`-Route AppData`, or `-Route Compiler`; supply `-CompilerRoot` for the last
+route. Use `-Find`, `-Verify`, and `-Uninstall` to inspect or remove its own
+files. The original BOIII AppData route is opt-in because Ezz BOIII may remove
+those files on launch. On Linux, the matching flags are `--route boiii|appdata|t7x|compiler|all`,
+`--to <game folder>`, `--appdata-root <LocalAppData folder>`, and
+`--compiler-root <project folder>`. For example:
+
+```text
+./installer/linux/install.sh --route t7x --to "/path/to/Black Ops III" --install
+./installer/linux/install.sh --route t7x --to "/path/to/Black Ops III" --verify
+```
+
+Both installers back up files they replace, restore them on uninstall, leave
+modified files alone, and write an action log. `-LogRoot` on Windows or
+`--state-root` on Linux selects the log directory. Run with `-Configure` or
+`--configure` to see the settings route for the selected client.
+
+BOIII and T7x carry ZStats' Lua menu and local career-PB storage; they use
+`ui_scripts` rather than a linked fastfile, so the custom menu background is
+not included. The t7-compiler injection carries only GSC: it has no ZStats
+settings menu or client-local career-PB persistence. Its package contains
+`scripts/zbundle/zstats.gsc`, a component receipt, and identical shared
+`gsc.conf`/README infrastructure. Overlay compiler packages from other Z mods
+into **one** compiler project, then compile and inject once. Running separate
+compiler projects successively is unsupported. The installer removes only
+ZStats' fragment and receipt; it leaves shared infrastructure for other
+components and rejects a conflicting copy. BOIII and T7x do not use this
+compiler-project route. Do not install a
+loose-script route alongside the Workshop or direct-download mod.
+
+The loose routes do not inject a separate `.csc` client script. ZStats' live
+HUD and recap run from GSC, while BOIII/T7x PB storage is handled by the
+included Lua `ui_scripts` notification listener. The retained `main.csc` in
+the Mod Tools source is for the combined ZBundle's stock-preserving client
+carrier, not a missing loose-route payload.
+
+BOIII and T7x script users configure ZStats through **ZSTATS SETTINGS** in
+the Zombies lobby or pause menu; the Lua menu persists their choices and
+career PBs. The compiler-only route has no Lua menu or durable client PBs.
+Set `zs_*` dvars in the console before a match instead, for example
+`set zs_hud_preset detailed`.
+
 For maintainers building from the release source, copy `ui`, `scripts`,
 `zone_source`, and `dummy.cfg` into `<BO3 Mod Tools>/mods/zstats`. Copy
 `source_data/zmods.gdt` and `texture_assets/zmods` into the matching top-level
 Mod Tools directories, let the launcher index the GDT, then link/build both
 `core_mod` and `zm_mod` with every language enabled. Players do not need these
 steps to use the Workshop mod.
+
+---
+
+## Languages
+
+ZStats settings are available in the game's twelve supported languages.
+Translations were made by AI and may contain mistakes. If you find one, please
+report it to Xep on the [Discord](https://discord.gg/RE85HRwYZZ), with the
+language and the line as it reads in the game.
 
 ---
 
@@ -202,6 +263,18 @@ combines the Z Mods in one selected mod. It has no separate GitHub repository.
 ---
 
 ## Changelog
+
+### v1.1
+
+- Added a separate Scoreboard HUD Preset. The normal HUD stays Compact by
+  default, while holding the scoreboard shows Detailed by default. Same as HUD
+  and Off are available, and the choice does not change the normal preset.
+- Added BOIII, T7x, and compiler-only script routes, with installers and
+  documented limits beside the complete Workshop and direct-download mod.
+- Translated BOIII and T7x settings menus into twelve languages.
+- Improved the live timer and personal HUD toggle when switching scoreboard
+  views, plus menu behavior shared with ZBundle. PPR and KPR now display a
+  consistent one decimal place instead of occasional long decimals.
 
 ### v1.0
 

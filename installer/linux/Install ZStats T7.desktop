@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Install ZStats T7 Script
+GenericName=Zombies stats and HUD
+Comment=Find a Black Ops III script client and install ZStats
+Icon=applications-games
+Terminal=true
+StartupNotify=false
+Categories=Game;
+Path=
+Exec=bash -c 'k="%k"; k="${k#file://}"; d="$(dirname "$k")"; cd "$d" || { echo "Could not find the extracted installer folder."; read -rp "Press Enter to close. "; exit 1; }; if [ -f ./install.sh ]; then bash ./install.sh; else echo "Extract the entire ZStats Script ZIP before installing."; fi; read -rp "Press Enter to close. "'
+X-KDE-SubstituteUID=false
