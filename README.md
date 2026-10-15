@@ -264,6 +264,12 @@ combines the Z Mods in one selected mod. It has no separate GitHub repository.
 
 ## Changelog
 
+### v1.2
+
+- Kept the settings category strip at its current position after changing a
+  setting, including when browsing categories farther to the right. The fix
+  covers the complete mod and the supported script-loader menus.
+
 ### v1.1
 
 - Added a separate Scoreboard HUD Preset. The normal HUD stays Compact by
