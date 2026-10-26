@@ -264,6 +264,12 @@ combines the Z Mods in one selected mod. It has no separate GitHub repository.
 
 ## Changelog
 
+### v1.3
+
+- Prevent ROUND TIME from carrying a previous round's start into the next
+  round on custom maps that advance their round number early. Show `--` until
+  a fresh round start is known, rather than displaying an inaccurate timer.
+
 ### v1.2
 
 - Kept the settings category strip at its current position after changing a
